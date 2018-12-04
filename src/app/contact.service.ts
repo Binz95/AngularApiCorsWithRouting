@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contact';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-
+  [x: string]: any;
+ contacts: Contact[];
   constructor(private http:HttpClient) { }
   getContacts():Observable<Contact[]>
   {
